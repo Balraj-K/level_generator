@@ -38,8 +38,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4931311128978094}
   - component: {fileID: 114116877470734922}
+  - component: {fileID: 114558355021828252}
   m_Layer: 0
-  m_Name: LevelGenerator
+  m_Name: Ground_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2701,3 +2702,15 @@ MonoBehaviour:
   colorMappings:
   - color: {r: 0, g: 0, b: 0, a: 1}
     prefab: {fileID: 1703525772412012, guid: 7b7e6406bde4cc8458cc6fe76ce3a41f, type: 2}
+--- !u!114 &114558355021828252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092493946539566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef866ce50d3c6455a97a8e5215808919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformDestructionPoint: {fileID: 0}
