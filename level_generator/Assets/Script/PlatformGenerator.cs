@@ -10,7 +10,10 @@ public class PlatformGenerator : MonoBehaviour {
 	public float distanceBetween;
 	private float platformWidth;
 
-	//public ObjectPooler theObjectPool;
+	public ObjectPooler[] theObjectPools;
+
+	//public GameObject[] thePlatforms;
+	private int platformSelector;
 
 	// Use this for initialization
 	void Start () {
@@ -22,12 +25,14 @@ public class PlatformGenerator : MonoBehaviour {
 		if (transform.position.x < generationPoint.position.x) {
 			transform.position = new Vector3 (transform.position.x +32+ distanceBetween, transform.position.y, transform.position.z);
 
-			Instantiate (thePlatform, transform.position, transform.rotation);
+			platformSelector = Random.Range (0, theObjectPools.Length);
 
-			/*GameObject newPlatform = theObjectPool.GetPooledObject();
+			//Instantiate (/*thePlatform*/ thePlatforms[platformSelector], transform.position, transform.rotation);
+
+			GameObject newPlatform = theObjectPools[platformSelector].GetPooledObject();
 			newPlatform.transform.position = transform.position;
 			newPlatform.transform.rotation = transform.rotation;
-			newPlatform.SetActive(true);*/
+			newPlatform.SetActive(true);
 		}
 
 	}
