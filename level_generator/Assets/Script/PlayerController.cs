@@ -93,16 +93,16 @@ public class PlayerController : MonoBehaviour {
 		rotationSpeedX = Input.gyro.rotationRate.x;
 		Debug.Log(rotationSpeedX);
 
-		if ((!isUpsideDown && grounded) && (rotationSpeedX < -1.1 || rotationSpeedX > 1.1))
+		if ((!isUpsideDown && grounded) && /*(rotationSpeedX < -1.1 || rotationSpeedX > 1.1)*/ (Input.GetKeyDown("a")))
 		{
 			// change the gravity settings
 			myRigidBody.gravityScale = -4;
 			// change the jumpForce to be negative!
-			jumpForce = -10;
+			jumpForce = -15;
 
 			isUpsideDown = true;
 
-		} else if ((isUpsideDown && grounded) && (rotationSpeedX < -1.1 || rotationSpeedX > 1.1))
+		} else if ((isUpsideDown && grounded) && /*(rotationSpeedX < -1.1 || rotationSpeedX > 1.1)*/(Input.GetKeyDown("a")) )
 		{
 			// change gravity settings
 			myRigidBody.gravityScale = 4;
