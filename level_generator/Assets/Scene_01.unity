@@ -412,8 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0864dfeae1e824132867f00a4ebb13c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
+  moveSpeed: 5
   jumpForce: 15
+  speedMultiplier: 2
+  speedIncreaseMilestone: 100
   grounded: 1
   onCeiling: 0
   isUpsideDown: 0

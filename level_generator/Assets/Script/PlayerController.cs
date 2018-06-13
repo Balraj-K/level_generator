@@ -10,6 +10,10 @@ public class PlayerController : MonoBehaviour {
 	public float moveSpeed;
 	public float jumpForce;
 
+	public float speedMultiplier;
+	public float speedIncreaseMilestone;
+	private float speedMilestoneCount;
+
 	// detect if player is on the ground
 	public bool grounded;
 	public bool onCeiling; // reverse gravity on ceiling
@@ -55,11 +59,19 @@ public class PlayerController : MonoBehaviour {
 
 		// enable gyroscope
 		Input.gyro.enabled = true;
+
+		speedMilestoneCount = speedIncreaseMilestone;
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+
+		if (transform.position.x > speedMilestoneCount) {
+			speedMilestoneCount += speedIncreaseMilestone;
+			speedIncreaseMilestone += speedIncreaseMilestone * speedMultiplier;
+			moveSpeed = moveSpeed + speedMultiplier;
+		}
 
 		// Sets the movement speed
 		myRigidBody.velocity = new Vector2(moveSpeed, myRigidBody.velocity.y);
