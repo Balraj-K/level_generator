@@ -32,9 +32,23 @@ public class PlayerController : MonoBehaviour {
 	// gyroscope rotation speed
 	public float rotationSpeedX;
 
+    // waiting tool
+    IEnumerator WaitAndPrint()
+    {
+        // suspend execution for 5 seconds
+        yield return new WaitForSeconds(5);
+        print("WaitAndPrint " + Time.time);
+    }
+
 	// Use this for initialization
-	void Start()
+    void Start()
+    //IEnumerator Start()
 	{
+
+        //print("Starting " + Time.time);
+        //yield return StartCoroutine("WaitAndPrint");
+        //print("Done " + Time.time);
+
 		// searches for the Rigidbody Component on the character.
 		myRigidBody = GetComponent<Rigidbody2D>();
 
